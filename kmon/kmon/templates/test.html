@@ -1,0 +1,35 @@
+<html>
+
+<h1><strong> {{category.Title}} </strong></h1>
+<p> current_page : {{page}}</p>
+<p> entries : {{entries}}</p>
+
+{% for entry in entries %}
+	<div>
+		<h3><a href="/blog/entry/{{entry.id}}">{{entry.Title}}</a></h3>
+	<ul>
+		<li>
+			{{entry.Created}}
+		</li>
+
+
+		{% for tag in entry.Tags.all %}
+		<li>
+			{{tag.Title}}	
+		</li>
+		{% endfor %}
+
+	</ul>
+		{{entry.Content}}
+
+	</div>
+	
+{% endfor %}
+<br/>
+		{% for i in ents %}
+			<a href="/blog/entry/{{i}}">[{{i}}]</a>
+		{% endfor %}
+
+
+		<h1>{{ents}}</h1>
+</html>

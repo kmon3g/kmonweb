@@ -1,0 +1,14 @@
+body{
+    margin-top: 150px;
+}
+.comment-case{
+	padding: 10px 30px;height: 60px;background: #fafcfc;
+}
+.comment-submit{
+	float: right;
+}
+.comment{
+    font-size: 18px;
+    font-weight: 400;
+    color: #a6a9ac;
+}

@@ -1,0 +1,62 @@
+{% extends 'layout.html'%}
+{% block layout %}
+    {% load staticfiles %}
+    <style>
+    header{
+    padding-top : 150px;
+    background-image: url('{% static '/BlogHome/img/23.jpg' %}');
+    }
+    .button{
+        width: 100px;
+        height: 100px;
+        line-height: 85px;
+        font-size: 85px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+    }
+    .btnicon{
+        font-size :45px;
+    }
+
+    a.button:focus,
+    a.button:hover,
+    a.button:active
+    {
+        color: #777777;
+    }
+    .moon{
+        width : 300px;
+        height : 300px;
+
+    }
+    </style>
+{% endblock layout %}
+
+{% block content %}
+    <header style="height:748px">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">kmon3g@gmail.com</div>
+                <!-- <div class="intro-heading">35ng</div> -->
+                <div class="intro-heading">
+                    Hi
+                    <!-- <img class="moon" src="img/mon1.png"/> -->
+                </div>
+
+                <a class="btn fa fa-circle fa-stack fa-4x text-primary button" href="/admin">
+                        <i class="fa fa-lock fa-stack-1x fa-inverse btnicon"></i>
+                </a>
+                <a class="btn fa fa-circle fa-stack fa-4x text-primary button" href="/blog/note/">
+                        <i class="fa fa-code fa-stack-1x fa-inverse btnicon"></i>
+                </a>
+                <a class="btn fa fa-circle fa-stack fa-4x text-primary button" href="/blog/web/">
+                        <i class="fa fa-at fa-stack-1x fa-inverse btnicon"></i>
+                </a>
+                <a class="btn fa fa-circle fa-stack fa-4x text-primary button" href="http://www.google.com">
+                        <i class="fa fa-asterisk fa-stack-1x fa-inverse btnicon"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+{% endblock content %}

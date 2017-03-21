@@ -1,0 +1,54 @@
+{% block main %}
+{% load staticfiles %}
+<div class="content">
+<p class="lead">
+<a href=""><!-- http://www.djangoproject.com/en/1.10/ref/ -->
+Django: <br> The Web framework for perfectionists with deadlines</a>
+</p>
+
+<div class="install">
+<h3>Django Install</h3>
+<hl>Python virtualenv : python -m venv KmonWeb (python >= 3)<br>
+	Virtualenv activate  :  KmonWeb/Scripts/activate<br>
+	Django install : pip install django==1.10.5
+</hl>
+</div>
+
+<div class="start">
+<h3>Django Start</h3>
+<hl>
+
+	(KmonWeb) C:\Users\kmon\KmonWeb > django-admin startproject kmon <br>
+	(KmonWeb) C:\Users\kmon\KmonWeb\kmon > python manage.py startapp blog <br>
+	(KmonWeb) C:\Users\kmon\KmonWeb > subl ./kmon/kmon/settings.py <br>
+	
+</hl>
+	<div class="colorscripter-code" style="color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto">
+	<table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px; line-height:140%" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important"><div style="padding:0 6px; white-space:pre">INSTALLED_APPS&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;[</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">'django.contrib.admin'</span>,</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">'django.contrib.auth'</span>,</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">'django.contrib.contenttypes'</span>,</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">'django.contrib.sessions'</span>,</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">'django.contrib.messages'</span>,</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">'django.contrib.staticfiles'</span>,</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span class="red">'blog'</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;]</div></div></td>
+	<td style="vertical-align:bottom; padding:0 2px 4px 0"></td></tr></table>
+	</div>
+
+
+    <hl>(KmonWeb) C:\Users\kmon\KmonWeb\Scripts > manage.py runserver 127.0.0.1:8000 또는 8000
+    </hl>
+
+	<!-- <img src="{% static 'BlogHome/img/content/settings1.png' %}"> -->
+	
+	
+</div>
+
+<div class="ref">
+reference :<br>
+blog.hannal.com<br>
+tutorial.djangogirls.org/ko/django_start_project/<br>
+www.djangoproject.com
+</div>
+
+</div>
+
+<!-- quatation <q>azzz</q> -->
+    <!-- <img src="/upload_files/kmon/uploaded/image/2017/02/14/Lighthouse_Q5TGPN3.jpg"/> -->
+
+
+
+{% endblock main %}

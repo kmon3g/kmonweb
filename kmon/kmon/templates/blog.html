@@ -1,0 +1,127 @@
+    {% extends 'layout.html' %}
+
+    {% block layout %}
+    {% load staticfiles %}
+        <link href="{% static 'BlogHome/css/main.css' %}" rel="stylesheet">
+        {% if category %}
+        <style type="text/css">
+            header{
+                background-image: url("{{category.Image_File.url}}");
+                }
+        </style>
+        {% endif %}
+
+    {% endblock layout %}
+
+    {% block content %}
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in"><!-- Kmon's Note  -->
+                <i class="fa fa-code"></i>
+                </div>
+                <div class="intro-heading">
+                    {% if category %}
+                    {{category}}
+                    {% else %}
+                    search
+                    {% endif %}
+                </div>
+                <!-- <div class="intro-heading">{{entries}}</div> -->
+                <!-- <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a> -->
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+    <div class="row"> 
+    <div class="col-lg-8 col-md-8 col-xs-12">
+    <section class="articles">
+    {% if entries or category %}
+        {% for entry in entries %}
+        <article class="yellow-article">
+            <div class="articles-header">
+                <time datetime="2016-10-11"><span class="glyphicon glyphicon-time"></span>
+                {{entry.Created|date:"Y-m-d"}}</time>
+                <span class="articles-header-tag-yellow">zzz</span>
+                <span class="articles-header-category"><a href="/blog/{{entry.Category.Title}}/" class="yellow" title="">{{entry.Category.Title|upper}}</a></span>
+            </div>
+            <div class="articles-content">
+                <h1><a href="/blog/{{entry.Category.Title}}/read/{{entry.eid}}" title="">{{entry.Title|upper }}</a></h1>
+                <p>
+                    {{entry.Content}}
+                </p>
+            </div>
+            <div class="articles-footer">
+                <ul class="articles-footer-info">
+                    <li>
+                    <a href="/blog/{{entry.Category.Title}}/read/{{entry.eid}}" class="light-link" title=""><i class="fa fa-commenting-o"></i> {{entry.Comments}} Response</a>
+                    </li>
+                </ul>
+                <a title="" class="btn" href="/blog/{{entry.Category.Title}}/read/{{entry.eid}}">Read more</a>
+
+            </div>
+        </article>
+        {% endfor %}
+    {% else  %}
+        <article class="yellow-article">
+            <div class="articles-header">
+                <time datetime="2016-10-11"><span class="glyphicon glyphicon-time"></span>
+                Now</time>
+                <span class="articles-header-tag-yellow">None</span>
+                <span class="articles-header-category">None</span>
+            </div>
+            <div class="articles-content">
+                <h1><a title="">검색 결과가 없습니다.</a></h1>
+                <p>
+                    다른 검색어를 입력해주세요. 
+                </p>
+            </div>
+            <div class="articles-footer">
+            </div>
+        </article>
+    {% endif %}
+        <nav aria-label="...">
+            {% if entries.has_other_pages %}
+            {% if entries.has_previous %}
+            <a title="" href="/blog/{{category.Title}}/{{entries.previous_page_number}}" class="btn-small-white pagination-back">Back</a>
+            {% endif %}
+
+            <ul class="pagination">
+            {% for i in entries.paginator.page_range %}
+                {% if entries.number == i %}
+
+
+                <li class="page-item active">
+                <a class="page-link">
+                {{i}}</a>
+                </li>
+                <!-- <li class="page-item">
+                    <a class="page-link" href="">{{page}}</a>
+                </li> -->
+                {% else %}
+                <li class="page-item">
+                <a class="page-link" href="/blog/{{category.Title}}/{{i}}">{{i}}</a>
+                </li>
+                
+                {% endif%}
+                <!-- <li class="page-item page-item-more"><a class="page-link" href="">...</a></li> -->
+                <!-- <li class="page-item"><a class="page-link" href="">25</a></li> -->
+            {% endfor %}
+            </ul>
+
+            {% if entries.has_next %}
+            <a title="" href="/blog/{{category.Title}}/{{entries.next_page_number}}" class="btn-small-white pagination-next">Next</a>
+            {% endif %}
+            {% endif %}
+        </nav>
+    </section>
+    </div>
+    {% block sidebar %}
+        {% include 'sidebar.html' %}
+    {% endblock sidebar %}
+    
+    </div>
+    
+{% endblock content %}

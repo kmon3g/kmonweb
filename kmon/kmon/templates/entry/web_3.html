@@ -1,0 +1,53 @@
+{% block main %}
+{% load staticfiles %}
+<div class="content">
+<p class="lead">
+<a href=""><!-- http://www.djangoproject.com/en/1.10/ref/ -->
+Django: <br> The Web framework for perfectionists with deadlines</a>
+</p>
+
+<div class="admin">
+	<h3>Django Admin User Create </h3>
+	<hl>
+		(KmonWeb) C:\Users\kmon\KmonWeb\kmon > manage.py createsuperuser <br>
+		Username : admin <br>
+		Email address : admin@kmon.xyz <br>
+		Password : <br>
+		Password (again) : <br>
+		Superuser created successfully. <br>
+
+		
+	</hl>
+	
+	<hl>
+		<br><br>
+		(KmonWeb) C:\Users\kmon\KmonWeb\kmon\blog > subl admin.py <br>
+	</hl>
+
+		<div class="colorscripter-code" style="color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px; line-height:140%" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important"><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">from</span>&nbsp;django.contrib&nbsp;<span style="color:#ff3399">import</span>&nbsp;admin</div><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">from</span>&nbsp;.models&nbsp;<span style="color:#ff3399">import</span>&nbsp;Entry</div><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">from</span>&nbsp;.models&nbsp;<span style="color:#ff3399">import</span>&nbsp;Category</div><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">from</span>&nbsp;.models&nbsp;<span style="color:#ff3399">import</span>&nbsp;Comment</div><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">from</span>&nbsp;.models&nbsp;<span style="color:#ff3399">import</span>&nbsp;TagModel</div><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">from</span>&nbsp;.models&nbsp;<span style="color:#ff3399">import</span>&nbsp;Photo</div><div style="padding:0 6px; white-space:pre">&nbsp;</div><div style="padding:0 6px; white-space:pre">admin.site.register(Entry)</div><div style="padding:0 6px; white-space:pre">admin.site.register(Category)</div><div style="padding:0 6px; white-space:pre">admin.site.register(Comment)</div><div style="padding:0 6px; white-space:pre">admin.site.register(TagModel)</div><div style="padding:0 6px; white-space:pre">admin.site.register(Photo)</div></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"></td></tr></table></div>
+
+
+		<img style="margin: 30px 0 30px 0;border: 2px solid #e2e2e2;border-radius: 4px;" src="{% static 'BlogHome/img/content/admin_login.png' %}"/> 
+		<img style="width: 500px; margin: 30px 0 30px 0;border: 2px solid #e2e2e2;border-radius: 4px;" src="{% static 'BlogHome/img/content/admin_page.png' %}"> 
+</div>
+	
+
+
+	
+
+
+<div class="ref">
+reference :<br>
+blog.hannal.com<br>
+tutorial.djangogirls.org/ko/django_start_project/<br>
+www.djangoproject.com
+</div>
+
+</div>
+
+<!-- quatation <q>azzz</q> -->
+    <!-- <img src="/upload_files/kmon/uploaded/image/2017/02/14/Lighthouse_Q5TGPN3.jpg"/> -->
+
+
+
+{% endblock main %}

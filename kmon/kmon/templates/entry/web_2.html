@@ -1,0 +1,52 @@
+{% block main %}
+{% load staticfiles %}
+<div class="content">
+<p class="lead">
+<a href=""><!-- http://www.djangoproject.com/en/1.10/ref/ -->
+Django: <br> The Web framework for perfectionists with deadlines</a>
+</p>
+
+<div class="model">
+	<h3>Django Model Design </h3>
+	<hl>
+		from django.db import models <br>
+		from django.utils import timezone <br>
+		from django.conf import settings <br><br>
+
+		models.CharField(max_length=40, null=False) <br>
+		models.ImageField(upload_to='/category/', null=True) <br>
+		models.PositiveIntegerField(default=1, null=False) <br>
+		models.ForeignKey(settings.AUTH_USER_MODEL) <br>
+		models.TextField(max_length=2000, null=False) <br>
+		models.DateTimeField(default=timezone.now) <br>
+
+		etc  ... : docs.djangoproject.com <br>
+	</hl>
+		<h3>Example:</h3> 
+</div>
+<div class="colorscripter-code" style="color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px; line-height:140%" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important"><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">class</span>&nbsp;Category(models.Model):</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#카테고리&nbsp;명</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Title&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.CharField(max_length<span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#c10aff">40</span>,&nbsp;<span style="color:#ff3399">null</span><span style="color:#ff3399">=</span>False)</div><div style="padding:0 6px; white-space:pre">&nbsp;</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Image_File&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.ImageField(upload_to<span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#ffd500">'/category/'</span>,&nbsp;<span style="color:#ff3399">null</span><span style="color:#ff3399">=</span>True)</div><div style="padding:0 6px; white-space:pre">&nbsp;</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">def</span>&nbsp;__str__(self):&nbsp;</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">return</span>&nbsp;self.Title</div><div style="padding:0 6px; white-space:pre">&nbsp;</div><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">class</span>&nbsp;Entry(models.Model):</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;eid&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.PositiveIntegerField(default<span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#c10aff">1</span>,&nbsp;<span style="color:#ff3399">null</span><span style="color:#ff3399">=</span>False)</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#작성자</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.ForeignKey(settings.AUTH_USER_MODEL)</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#글&nbsp;제목&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Title&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.CharField(max_length<span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#c10aff">80</span>,&nbsp;<span style="color:#ff3399">null</span><span style="color:#ff3399">=</span>False)</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#글&nbsp;본문&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Content&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.TextField(max_length<span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#c10aff">2000</span>,&nbsp;<span style="color:#ff3399">null</span><span style="color:#ff3399">=</span>False)</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#작성&nbsp;일시&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Summary&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.TextField(max_length<span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#c10aff">500</span>,&nbsp;<span style="color:#ff3399">null</span><span style="color:#ff3399">=</span>False)</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#미리보기</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Created&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.DateTimeField(default<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>timezone.now)</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#카테고리</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Category&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.ForeignKey(Category)</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#태그&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Tags&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.ManyToManyField(TagModel,&nbsp;<span style="color:#ff3399">null</span><span style="color:#ff3399">=</span>True)</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#999999">#댓글&nbsp;수&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;Comments&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;models.PositiveIntegerField(default<span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#c10aff">0</span>,&nbsp;<span style="color:#ff3399">null</span><span style="color:#ff3399">=</span>True)</div><div style="padding:0 6px; white-space:pre">&nbsp;</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">def</span>&nbsp;__str__(self):&nbsp;</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">return</span>&nbsp;self.Title</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4f; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"></td></tr></table></div>
+
+		
+
+
+	
+
+
+	
+
+
+<div class="ref">
+reference :<br>
+blog.hannal.com<br>
+tutorial.djangogirls.org/ko/django_start_project/<br>
+www.djangoproject.com
+</div>
+
+</div>
+
+<!-- quatation <q>azzz</q> -->
+    <!-- <img src="/upload_files/kmon/uploaded/image/2017/02/14/Lighthouse_Q5TGPN3.jpg"/> -->
+
+
+
+{% endblock main %}

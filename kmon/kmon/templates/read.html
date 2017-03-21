@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+{% block layout %}
+    <link href="{% static 'BlogHome/css/read_layout.css' %}" rel="stylesheet">
+    <link href="{% static 'BlogHome/css/main.css' %}" rel="stylesheet">
+{% endblock layout %}
+
+
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+                <!-- Blog Post -->
+                <!-- Title -->
+                <h1> {{entry.Title}} </h1>
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#"> {{entry.User}} </a>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p>
+                <span class="glyphicon glyphicon-time"></span>
+                Posted on {{entry.Created}} </p>
+                <!-- August 24, 2013 at 9:00 PM -->
+                <hr>
+                <!-- <img class="img-responsive" src="/upload_files/" > -->
+                
+                {% block main%}
+                    {% include content %}
+                {% endblock main %}
+                
+                <!-- Blog Comments -->
+                <!-- Comments Form -->
+                <div class="comment-case">
+                    <h4 class="comment">Comment {{entry.Comments}}</h4>
+                </div>
+                <div class="well">
+                    <form method="post" role="form">{% csrf_token %}
+                        <div class="form-group">
+                            <textarea name="Content" class="form-control" rows="3" placeholder="Plz Leave a Comment :)"></textarea>
+                        </div>
+                        <div class="row form-group">
+                            <!-- <div class="col-xs-1 ">
+                            <label class="control-label" style="margin-top: 5px">Name :</label>
+                            </div> -->
+                            <div class="col-xs-4">
+                                <input name="Name" class="form-control col-xs-4 input-sm" placeholder="Name" />
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="password" name="Password" class="form-control input-sm" placeholder="Pass"/>
+                            </div>
+                            <div class="comment-submit col-xs-2">
+                                <!-- <button type="submit" class="btn btn-primary">Submit
+                                </button> -->
+                                <button type="submit" class="btn btn-small">Submit</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                
+
+                <hr style="border-top: 1px solid #dddddd;">
+                {% for comment in comments %}
+                <div class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading">{{comment.Name}}
+                            <small>{{comment.Created}}</small>
+                        </h4>
+                        {{comment.Content}}
+                    </div>
+                </div>
+                <hr style="border-top: 1px solid #dddddd;">
+                {% endfor %}
+            </div>
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            {% block sidebar %}
+                {% include 'sidebar.html' %}
+            {% endblock sidebar %}
+        <!-- /.row -->
+        <!-- <hr> -->
+    </div>
+    <!-- /.container -->
+{% endblock content %}
+

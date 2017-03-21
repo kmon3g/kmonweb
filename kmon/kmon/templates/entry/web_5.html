@@ -1,0 +1,33 @@
+{% block main %}
+{% load staticfiles %}
+<div class="content">
+<p class="lead">
+<a href=""><!-- http://www.djangoproject.com/en/1.10/ref/ -->
+Django: <br> The Web framework for perfectionists with deadlines</a>
+</p>
+
+<div class="url">
+	<h3>Django URL Settings Example</h3>
+	[\w\-]+ : String <br>
+	(\d+) : Number <br>
+	
+	<div class="colorscripter-code" style="font-size:10px;color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; width:500px; height:10000px; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px; line-height:140%" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important"><div style="padding:0 6px; white-space:pre"><span style="color:#ff3399">from</span>&nbsp;blog&nbsp;<span style="color:#ff3399">import</span>&nbsp;views</div><div style="padding:0 6px; white-space:pre">&nbsp;</div><div style="padding:0 6px; white-space:pre">urlpatterns&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;[</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;url(r<span style="color:#ffd500">'^$'</span>,&nbsp;views.index),</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;url(r<span style="color:#ffd500">'^blog/$'</span>,&nbsp;views.index),</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;url(r<span style="color:#ffd500">'^admin/'</span>,&nbsp;admin.site.urls),</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;url(r<span style="color:#ffd500">'^blog/search/(?P&lt;query&gt;[\w\-]+)/$'</span>,&nbsp;views.search),</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;url(r<span style="color:#ffd500">'^blog/search/(?P&lt;query&gt;[\w\-]+)/(?P&lt;page&gt;\d+)/$'</span>,&nbsp;views.search),</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;url(r<span style="color:#ffd500">'^blog/(?P&lt;category_title&gt;[\w\-]+)/$'</span>,&nbsp;views.blog),</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;url(r<span style="color:#ffd500">'^blog/(?P&lt;category_title&gt;[\w\-]+)/(?P&lt;page&gt;\d+)/$'</span>,&nbsp;views.blog),</div><div style="padding:0 6px; white-space:pre">&nbsp;&nbsp;&nbsp;&nbsp;url(r<span style="color:#ffd500">'^blog/(?P&lt;category_title&gt;[\w\-]+)/read/(?P&lt;entry_id&gt;\d+)/$'</span>,&nbsp;views.read),</div><div style="padding:0 6px; white-space:pre">]</div><div style="padding:0 6px; white-space:pre">urlpatterns&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span><span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;static(<span style="color:#ffd500">'upload_files'</span>,&nbsp;document_root<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>settings.MEDIA_ROOT)</div></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"></td></tr></table></div>
+		
+	
+</div>
+
+<div class="ref">
+reference :<br>
+blog.hannal.com<br>
+tutorial.djangogirls.org/ko/django_start_project/<br>
+www.djangoproject.com
+</div>
+
+</div>
+
+<!-- quatation <q>azzz</q> -->
+    <!-- <img src="/upload_files/kmon/uploaded/image/2017/02/14/Lighthouse_Q5TGPN3.jpg"/> -->
+
+
+
+{% endblock main %}
